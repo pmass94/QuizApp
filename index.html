@@ -20,7 +20,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">QuizApp</a>
@@ -29,37 +29,37 @@
 
   <div class="container">
     <div class="card" style="width: 47rem;">
-      <img src="img/quiz.jpg" class="card-img-top" alt="...">
+      <img src="img/quiz.jpg" class="card-img-top" >
       <div class="card-body">
-        <h5 class="card-title">Frage</h5>
+        <h5 class="card-title" id="questiontext">Frage</h5>
 
-        <div class="card mb-3">
-          <div class="card-body">
+        <div class="card mb-3 quiz-answer-card" onclick="answer('answer_1')">
+          <div class="card-body" id="answer_1">
             Antwort 1
           </div>
         </div>
 
-        <div class="card mb-3">
-          <div class="card-body">
+        <div class="card mb-3 quiz-answer-card" onclick="answer('answer_2')">
+          <div class="card-body" id="answer_2">
             Antwort 2
           </div>
         </div>
 
-        <div class="card mb-3">
-          <div class="card-body">
+        <div class="card mb-3 quiz-answer-card" onclick="answer('answer_3')">
+          <div class="card-body" id="answer_3">
             Antwort 3
           </div>
         </div>
 
-        <div class="card mb-3">
-          <div class="card-body">
+        <div class="card mb-3 quiz-answer-card" onclick="answer('answer_4')">
+          <div class="card-body" id="answer_4">
             Antwort 4
           </div>
         </div>
 
         <div class="q-footer">
 
-          <span><b>1 </b> von <b>5 </b> Fragen</span>
+          <span><b>1 </b> von <b id="all-questions"> </b> Fragen</span>
           <button type="button" class="btn btn-outline-dark">Nächste Frage</button>
 
         </div>

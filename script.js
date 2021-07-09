@@ -23,11 +23,59 @@ let questions = [
         "answer_2": "19",
         "answer_3": "23",
         "answer_4": "17",
-        "right_answer":2
+        "right_answer": 2
     },
-
-
-
-
+    {
+        "question": "Wie oft gewann Arnold Schwarznegger den Titel des IFBB Mr. Olympia?",
+        "answer_1": "4 mal",
+        "answer_2": "7 mal",
+        "answer_3": "5 mal",
+        "answer_4": "6 mal",
+        "right_answer": 2
+    },
+    {
+        "question": "Was ist ein bekanntes mexikanisches Alkoholgetränk?",
+        "answer_1": "Tequilla",
+        "answer_2": "Rum",
+        "answer_3": "Vodka",
+        "answer_4": "Gin",
+        "right_answer": 1
+    }
 
 ];
+
+let currentQuestion = 0;
+
+
+
+function init() {
+    document.getElementById("all-questions").innerHTML = questions.length;
+
+    showQuestion();
+
+}
+
+function showQuestion() {
+    let question = questions[currentQuestion];
+
+    document.getElementById('questiontext').innerHTML = question['question'];
+    document.getElementById('answer_1').innerHTML = question['answer_1'];
+    document.getElementById('answer_2').innerHTML = question['answer_2'];
+    document.getElementById('answer_3').innerHTML = question['answer_3'];
+    document.getElementById('answer_4').innerHTML = question['answer_4'];
+}
+
+function answer(selection) {
+    let question = questions[currentQuestion];
+    let selectedQuestionNumber = selection.slice(-1);
+
+    let idOfRightAnswer = `answer_${question['right_answer']}`;
+
+    if (selectedQuestionNumber == question['right_answer']) {
+        document.getElementById(selection).parentNode.classList.add('bg-success');
+    } else {
+        document.getElementById(selection).parentNode.classList.add('bg-danger');
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+    
+    }
+}
