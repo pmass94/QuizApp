@@ -78,4 +78,5 @@ function answer(selection) {
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     
     }
+    document.getElementById('nextbutton').disabled = false;
 }
