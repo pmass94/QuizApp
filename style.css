@@ -1,5 +1,5 @@
 body {
-    background-color: #fae2af !important;
+    background-color: #fffbe0 !important;
 }
 
 .container {
@@ -8,6 +8,8 @@ body {
     justify-content:center;
     align-items: center;
     min-height: 100vh;
+    padding-right: 0px !important;
+    padding-left: 0px  !important;
 }
 
 .q-footer{
@@ -33,6 +35,10 @@ body {
     width: 100%;
 }
 
+.center {
+    justify-content: center !important;
+}
+
 .text-center{
     text-align: center;
 }
@@ -40,4 +46,10 @@ body {
 .final-headline {
     font-size: 4rem;
     margin-bottom: 1rem;
+}
+
+.button-restart {
+    display: flex;
+    justify-content:center;
+    margin-top: 2rem;
 }

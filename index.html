@@ -22,30 +22,42 @@
 
 <body onload="init()">
   <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">QuizApp</a>
+    <div class="container-fluid center">
+      <a class="navbar-brand " href="#">QuizApp</a>
     </div>
   </nav>
 
   <div class="container">
-    
 
-      
+
+
     <div class="card" style="width: 47rem;">
       <img src="img/quiz.jpg" id="header-image" class="card-img-top">
 
       <div class="progress" id="bar-of-progress">
-        <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+          aria-valuemin="0" aria-valuemax="100">25%</div>
       </div>
+
+
+      <!-- End of game-->
 
       <div class="card-body" id="endScreen" style="display: none;">
         <div class="text-center final-headline">Quiz beendet!</div>
 
-        
+        <div class="text-center">
+          Du hast <b id="right-answers">XXX</b> von <b id="finish-questions">XXX</b> Fragen richtig beantwortet.
+        </div>
 
-        <div class="text-center">Du hast <b id="right-answers">XXX</b> von <b id="finish-questions">XXX</b> Fragen richtig beantwortet.</div>
+        <div class="button-restart">
+          <button onclick="restartGame()" class="btn btn-outline-dark"> Erneut spielen</button>
+        </div>
 
       </div>
+
+
+
+
 
       <div class="card-body" id="questionbody">
         <h5 class="card-title" id="questiontext">Frage</h5>
