@@ -18,9 +18,9 @@ let questions = [
 
     },
     {
-        "question": "Wie viele Grand-Slam-Titel konnte Novak Djokovic schon gewinnen?",
+        "question": "Wie viele Grand-Slam-Titel konnte Novak Djokovic schon gewinnen? <br> (Stand: 12.07.2021)",
         "answer_1": "14",
-        "answer_2": "19",
+        "answer_2": "20",
         "answer_3": "23",
         "answer_4": "17",
         "right_answer": 2
@@ -45,6 +45,7 @@ let questions = [
 ];
 
 let currentQuestion = 0;
+let rightQuestion = 0;
 
 
 
@@ -59,8 +60,17 @@ function showQuestion() {
 
     if (currentQuestion >= questions.length) {
         document.getElementById("endScreen").style = '';
-        document.getElementById("questionbody").style = 'display:none'
+        document.getElementById("questionbody").style = 'display: none';
+        document.getElementById("bar-of-progress").style = 'display: none';
+        document.getElementById("finish-questions").innerHTML = questions.length;
+        document.getElementById("right-answers").innerHTML = rightQuestion;
+        document.getElementById("header-image").src = 'img/trophy.jpg'
     } else {
+
+        let percent = currentQuestion / questions.length;
+        percent = percent *100;
+        document.getElementById('progress-bar').innerHTML = `${percent} %`;
+        document.getElementById('progress-bar').style = `width:${percent}%`;
 
         let question = questions[currentQuestion];
 
@@ -81,6 +91,8 @@ function answer(selection) {
 
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        rightQuestion++;
+
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
