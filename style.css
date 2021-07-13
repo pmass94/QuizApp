@@ -53,3 +53,10 @@ body {
     justify-content:center;
     margin-top: 2rem;
 }
+
+@media(max-width: 1000px) {
+
+    .final-headline{
+        font-size:3rem;
+    }
+}
